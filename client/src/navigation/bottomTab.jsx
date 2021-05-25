@@ -1,8 +1,9 @@
 import React from 'react';
 import { AnimatedTabBarNavigator } from 'react-native-animated-nav-tab-bar';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
-import MainFeed from 'src/feed/mainFeed';
+import HomeStack from 'navigation/homeStack';
+import ExploreStack from 'navigation/exploreStack';
+import EngageStack from 'navigation/engageStack';
 
 export default function BottomTabs() {
     // create hook
@@ -18,10 +19,11 @@ export default function BottomTabs() {
           }}
           appearance={{
               shadow: "true",
-              tabBarBackground: "white"
+              tabBarBackground: "white",
+              dotSize: "medium"
           }}
         >
-          <Tabs.Screen name="Home" component={MainFeed} 
+          <Tabs.Screen name="Home" component={HomeStack} 
                 options={{
                 tabBarIcon: ({ focused, color, size }) => (
                     <Icon
@@ -34,7 +36,7 @@ export default function BottomTabs() {
                 )
                 }}
             />
-          <Tabs.Screen name="Explore" component={MainFeed} 
+          <Tabs.Screen name="Explore" component={ExploreStack} 
                 options={{
                 tabBarIcon: ({ focused, color, size }) => (
                     <Icon
@@ -47,7 +49,7 @@ export default function BottomTabs() {
                 )
                 }}
             />
-          <Tabs.Screen name="Engagement" component={MainFeed} 
+          <Tabs.Screen name="Engagement" component={EngageStack} 
                 options={{
                 tabBarIcon: ({ focused, color, size }) => (
                     <Icon
