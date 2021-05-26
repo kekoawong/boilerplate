@@ -67,16 +67,6 @@ function Other() {
             x="quarter"
             y="earnings"
           />
-          <VictoryBar
-            data={data2014}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2015}
-            x="quarter"
-            y="earnings"
-          />
         </VictoryStack>
       </VictoryChart>
     );
