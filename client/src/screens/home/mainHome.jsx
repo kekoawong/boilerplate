@@ -5,6 +5,7 @@ import HomeViz from 'src/dataViz/homeViz';
 export default function MainFeed() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <HomeViz/>
         <Text>sdf Screen</Text>
       </View>
     );
