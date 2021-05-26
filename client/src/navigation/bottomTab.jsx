@@ -1,9 +1,9 @@
 import React from 'react';
 import { AnimatedTabBarNavigator } from 'react-native-animated-nav-tab-bar';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeStack from 'src/navigation/homeStack';
-import ExploreStack from 'src/navigation/exploreStack';
-import EngageStack from 'src/navigation/engageStack';
+import HomeStack from 'navigation/homeStack';
+import ExploreStack from 'navigation/exploreStack';
+import EngageStack from 'navigation/engageStack';
 
 export default function BottomTabs() {
     // create hook
