@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import MainFeed from 'src/feed/mainFeed';
+import MainExplore from 'screens/explore/mainExplore';
 
 export default function ExploreStack() {
 
@@ -7,7 +7,7 @@ export default function ExploreStack() {
 
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={MainFeed} />
+            <Stack.Screen name="Home" component={MainExplore} />
         </Stack.Navigator>
     );
 }
