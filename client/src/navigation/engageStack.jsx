@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import MainFeed from 'src/feed/mainFeed';
+import MainEngage from 'screens/engage/mainEngage';
 
 export default function EngageStack() {
 
@@ -8,7 +8,7 @@ export default function EngageStack() {
 
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Engagement" component={MainFeed} />
+            <Stack.Screen name="Engagement" component={MainEngage} />
         </Stack.Navigator>
     );
 }
