@@ -3,7 +3,7 @@ import { VictoryBar,
         VictoryChart, 
         VictoryAxis,
         VictoryTheme, 
-        VictoryStack } from 'victory';
+        VictoryStack } from 'victory-native';
 
 const data2012 = [
     {quarter: 1, earnings: 13000},
@@ -36,7 +36,7 @@ const data2012 = [
 export default function HomeViz() {
 
     return (
-        <VictoryBar />
+        <Other />
     );
 }
   
@@ -53,7 +53,6 @@ function Other() {
         />
         <VictoryAxis
           dependentAxis
-          tickFormat={(x) => (`$${x / 1000}k`)}
         />
         <VictoryStack
           colorScale={"warm"}
