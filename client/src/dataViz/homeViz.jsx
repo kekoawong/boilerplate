@@ -1,10 +1,12 @@
 import React from 'react';
 import { VictoryBar, 
+        VictoryHistogram,
         VictoryChart, 
         VictoryAxis,
         VictoryTheme, 
         VictoryStack } from 'victory-native';
 
+// dummy data for bar chart
 const data2012 = [
     {quarter: 1, earnings: 13000},
     {quarter: 2, earnings: 16500},
@@ -19,55 +21,60 @@ const data2012 = [
     {quarter: 4, earnings: 13000}
   ];
   
-  const data2014 = [
-    {quarter: 1, earnings: 11500},
-    {quarter: 2, earnings: 13250},
-    {quarter: 3, earnings: 20000},
-    {quarter: 4, earnings: 15500}
+// for histograms, data must only have one x property, instead of an x and y property
+  const datah1 = [
+    { x: 1 },
+    { x: 2 },
+    { x: 2 },
+    { x: 4 },
+    { x: 4 },
+    { x: 5 }
   ];
   
-  const data2015 = [
-    {quarter: 1, earnings: 18000},
-    {quarter: 2, earnings: 13250},
-    {quarter: 3, earnings: 15000},
-    {quarter: 4, earnings: 12000}
+  const datah2 = [
+    { x: 3 },
+    { x: 7 },
+    { x: 6 },
+    { x: 4 },
+    { x: 3 },
+    { x: 5 }
   ];
 
 export default function HomeViz() {
 
     return (
-        <Other />
+        <Histogram />
     );
 }
-  
-function Other() {
 
-    return (
-        <VictoryChart
-        domainPadding={20}
-        theme={VictoryTheme.material}
-      >
-        <VictoryAxis
-          tickValues={[1, 2, 3, 4]}
-          tickFormat={["Quarter 1", "Quarter 2", "Quarter 3", "Quarter 4"]}
-        />
+function Histogram() {
+
+  return (
+      <VictoryChart
+      theme={VictoryTheme.material}
+    >
+        <VictoryAxis/>
         <VictoryAxis
           dependentAxis
         />
         <VictoryStack
           colorScale={"warm"}
         >
-          <VictoryBar
-            data={data2012}
-            x="quarter"
-            y="earnings"
-          />
-          <VictoryBar
-            data={data2013}
-            x="quarter"
-            y="earnings"
-          />
+            <VictoryHistogram
+              animate={{
+                duration: 2000,
+                onLoad: { duration: 1000 }
+              }}
+              data={datah1}
+            />
+            <VictoryHistogram
+              animate={{
+                duration: 2000,
+                onLoad: { duration: 1000 }
+              }}
+              data={datah2}
+            />
         </VictoryStack>
-      </VictoryChart>
-    );
+    </VictoryChart>
+  );
 }
