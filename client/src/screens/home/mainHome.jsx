@@ -2,25 +2,26 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 import HomeViz from 'src/dataViz/homeViz';
-import ActionButtons from 'src/library/actionButtons';
 
 export default function MainFeed() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <HomeViz/>
+      <View style={styles.mainContainer}>
+        <HomeViz
+          width={400}
+        />
         <Text>sdf Screen</Text>
         <View style={styles.buttonContainer}>
             <FAB
-            style={styles.fab}
-            label="Create Event"
-            icon="emoticon-cool"
-            onPress={() => console.log('Pressed')}
+              style={styles.fab}
+              label="Create Event"
+              icon="emoticon-cool"
+              onPress={() => console.log('Pressed')}
             />
             <FAB
-            style={styles.fab}
-            label="Scan"
-            icon="qrcode-scan"
-            onPress={() => console.log('Pressed')}
+              style={styles.fab}
+              label="Scan"
+              icon="qrcode-scan"
+              onPress={() => console.log('Pressed')}
             />
         </View>
       </View>
@@ -28,6 +29,12 @@ export default function MainFeed() {
 }
 
 const styles = StyleSheet.create({
+  mainContainer: { 
+    flex: 1
+  },
+  dataViz: {
+    height: 200
+  },
   buttonContainer: {
     position: 'absolute',
     margin: 25,

@@ -1,5 +1,7 @@
 import React from 'react';
-import { VictoryLegend, 
+import { StyleSheet, View } from 'react-native';
+import PropTypes from 'prop-types';
+import { VictoryLabel, 
         VictoryHistogram,
         VictoryChart, 
         VictoryAxis,
@@ -13,43 +15,38 @@ import { VictoryLegend,
     { x: 2 },
     { x: 2 },
     { x: 4 },
-    { x: 4 },
-    { x: 5 }
-  ];
-  
-  const Attendance = [
-    { x: 3 },
-    { x: 7 },
-    { x: 6 },
-    { x: 4 },
     { x: 3 },
     { x: 5 }
   ];
 
-export default function HomeViz() {
-
-    return (
-        <Histogram />
-    );
+// proptypes
+HomeViz.propTypes = {
+  height: PropTypes.number ? PropTypes.number : 300,
+  width: PropTypes.number ? PropTypes.number : 450
 }
 
-function Histogram() {
+export default function HomeViz(props) {
 
-  return (
-      <VictoryChart
-      theme={VictoryTheme.material}
-    >
-        <VictoryAxis
-        animate={{
-          duration: 2000,
-          easing: "bounce"
-        }}/>
-        <VictoryAxis
-          dependentAxis
-        />
-        <VictoryStack
-          colorScale={"warm"}
+    return (
+      <View style={styles.outerContainer}>
+        <VictoryChart
+          theme={VictoryTheme.material}
+          domainPadding={0}
+          padding={60}
+          style={styles.container}
+          width={props.width}
+          height={props.height}
+          
         >
+          <VictoryAxis
+            label="Date"
+            style={{...sharedAxisStyles}}
+          />
+          <VictoryAxis
+            label="Events"
+            style={{...sharedAxisStyles}}
+            dependentAxis
+          />
             <VictoryHistogram
               animate={{
                 duration: 2000,
@@ -62,7 +59,32 @@ function Histogram() {
                 }
               }}
             />
-        </VictoryStack>
-    </VictoryChart>
-  );
+        </VictoryChart>
+      </View>
+    );
 }
+
+
+// style object for Axis
+const sharedAxisStyles = {
+  tickLabels: {
+    fill: "grey",
+    fontSize: 14
+  },
+  axisLabel: {
+    fill: "grey",
+    padding: 36,
+    fontSize: 15,
+    fontStyle: "italic"
+  }
+};
+
+// stlyes
+const styles = StyleSheet.create({
+  outerContainer: {
+    justifyContent: 'center'
+  },
+  container: {
+    padding: 15
+  }
+});
