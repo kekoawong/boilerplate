@@ -13,14 +13,14 @@ export default function BottomTabs() {
         <Tabs.Navigator
           // default configuration from React Navigation
           tabBarOptions={{
-            activeTintColor: "black",
+            activeTintColor: "#8947ed",
             inactiveTintColor: "black",
-            activeBackgroundColor: "#8947ed"
+            activeBackgroundColor: "transparent"
           }}
           appearance={{
               shadow: "true",
               tabBarBackground: "white",
-              dotSize: "medium"
+              dotSize: "small"
           }}
         >
           <Tabs.Screen name="Home" component={HomeStack} 
@@ -55,7 +55,7 @@ export default function BottomTabs() {
                     <Icon
                         name="pulse-sharp"
                         size={size ? size : 24}
-                        color={focused ? color : "#222222"}
+                        color={focused ? color : "green"}
                         focused={focused}
                         color={color}
                     />
