@@ -14,7 +14,7 @@ export default function MainFeed() {
             <FAB
               style={styles.fab}
               label="Create Event"
-              icon="emoticon-cool"
+              icon="calendar-plus"
               onPress={() => console.log('Pressed')}
             />
             <FAB
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row-reverse',
   },
   fab: {
-    marginLeft: 10
+    marginLeft: 10,
+    backgroundColor: '#8947ed'
   },
 });
