@@ -27,6 +27,9 @@ HomeViz.propTypes = {
 
 export default function HomeViz(props) {
 
+    // for formatting ticks to only ints
+    const tickValueFormat = (tick) => tick % 1 ? '' : Math.round(tick);
+
     return (
       <View style={styles.outerContainer}>
         <VictoryChart
@@ -36,7 +39,6 @@ export default function HomeViz(props) {
           style={styles.container}
           width={props.width}
           height={props.height}
-          
         >
           <VictoryAxis
             label="Date"
@@ -46,6 +48,7 @@ export default function HomeViz(props) {
             label="Events"
             style={{...sharedAxisStyles}}
             dependentAxis
+            tickFormat={tickValueFormat}
           />
             <VictoryHistogram
               animate={{
