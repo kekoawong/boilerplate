@@ -82,7 +82,6 @@ const sharedAxisStyles = {
   }
 };
 
-// stlyes
 const styles = StyleSheet.create({
   outerContainer: {
     justifyContent: 'center'

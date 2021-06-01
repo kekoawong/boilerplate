@@ -12,14 +12,7 @@ function FAB(props) {
       raised
       containerStyle={{...props.style, borderRadius: br}}
       buttonStyle={{...props.style, borderRadius: br}}
-      icon={
-        <Icon
-          name="calendar-plus"
-          size={25}
-          color="white"
-          margin={50}
-        />
-      }
+      icon={props.icon}
     />
   );
 }

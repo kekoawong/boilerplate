@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { FAB } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Button } from 'react-native-elements';
+import FAB from 'src/library/FAB';
 import HomeViz from 'src/dataViz/homeViz';
 
 export default function MainFeed() {
@@ -10,17 +12,37 @@ export default function MainFeed() {
           width={400}
         />
         <Text>sdf Screen</Text>
-        <View style={styles.buttonContainer}>
-            <FAB
-              style={styles.fab}
-              label="Create Event"
-              icon="calendar-plus"
-              onPress={() => console.log('Pressed')}
+        <FAB
+          style={styles.fabContainer}
+          icon={
+            <Icon
+              name="calendar-plus"
+              size={25}
+              color="white"
+              margin={50}
             />
-            <FAB
+          }
+        />
+        <Button 
+          title="Create Event" 
+          raised
+          containerStyle={styles.fabContainer}
+          buttonStyle={styles.fab}
+          icon={
+            <Icon
+              name="calendar-plus"
+              size={25}
+              color="white"
+              margin={50}
+            />
+          }
+        />
+        <View style={styles.buttonContainer}>
+            <Button
               style={styles.fab}
-              label="Scan"
-              icon="qrcode-scan"
+              raised
+              title="Create Event"
+              icon="calendar-plus"
               onPress={() => console.log('Pressed')}
             />
         </View>
@@ -43,8 +65,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row-reverse',
   },
-  fab: {
-    marginLeft: 10,
-    backgroundColor: '#8947ed'
+  fabContainer: {
+    borderRadius: 50, 
+    maxWidth: '40%',
+    marginLeft: 10
   },
+  fab: {
+    borderRadius: 50,
+    backgroundColor: '#8947ed'
+  }
 });

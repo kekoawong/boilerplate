@@ -10,6 +10,7 @@ module.exports = function(api) {
             src: "./src",
             navigation: "./src/navigation",
             screens: "./src/screens",
+            library: "./src/library",
             root: "../"
           },
         },
