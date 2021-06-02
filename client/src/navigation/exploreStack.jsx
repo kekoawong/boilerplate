@@ -12,7 +12,6 @@ function HeaderSearchBar(props) {
     
     // get platform for searchbar
     const platform = Platform.OS === 'android' ? 'android' : 'ios';
-    console.log(props);
 
     return (
       <SearchBar
