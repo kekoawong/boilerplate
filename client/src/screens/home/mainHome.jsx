@@ -1,10 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useTheme } from '@react-navigation/native';
 import FAB from 'src/library/FAB';
 import HomeViz from 'src/dataViz/homeViz';
 
 export default function MainFeed() {
+
+    const theme = useTheme();
+
     return (
       <View style={styles.mainContainer}>
         <HomeViz
@@ -14,7 +18,7 @@ export default function MainFeed() {
         <View style={styles.buttonContainer}>
             <FAB
               title="Create Event"
-              style={styles.fabEvent}
+              style={{...styles.fabEvent, backgroundColor: theme.colors.primary}}
               icon={
                 <Icon
                   style={{marginHorizontal: 4}}
@@ -27,7 +31,7 @@ export default function MainFeed() {
             />
             <FAB
               title="Scan"
-              style={styles.fabScan}
+              style={{...styles.fabScan, backgroundColor: theme.colors.primary}}
               icon={
                 <Icon
                   style={{marginHorizontal: 4}}
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
   fabEvent: {
     borderRadius: 50, 
     flex: 3,
-    marginHorizontal: 5
+    marginHorizontal: 5,
   },
   fabScan: {
     borderRadius: 50, 
