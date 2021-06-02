@@ -9,6 +9,7 @@ module.exports = function(api) {
           alias: {
             src: "./src",
             navigation: "./src/navigation",
+            theme: "./constants/theme.jsx",
             screens: "./src/screens",
             library: "./src/library",
             root: "../"

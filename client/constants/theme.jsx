@@ -6,7 +6,7 @@ export const LightTheme = {
         ...DefaultTheme.colors,
         primary: "#8947ed",
         background: 'white',
-        text: 'black'
+        normalText: 'black'
     },
   };
 

@@ -4,22 +4,24 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import HomeStack from 'navigation/homeStack';
 import ExploreStack from 'navigation/exploreStack';
 import EngageStack from 'navigation/engageStack';
+import { useTheme } from '@react-navigation/native';
 
 export default function BottomTabs() {
     // create hook
     const Tabs = AnimatedTabBarNavigator();
+    const theme = useTheme();
 
     return (
         <Tabs.Navigator
           // default configuration from React Navigation
           tabBarOptions={{
-            activeTintColor: "#8947ed",
-            inactiveTintColor: "black",
+            activeTintColor: theme.colors.primary,
+            inactiveTintColor: theme.colors.normalText,
             activeBackgroundColor: "transparent"
           }}
           appearance={{
               shadow: "true",
-              tabBarBackground: "white",
+              tabBarBackground: theme.colors.background,
               dotSize: "small"
           }}
         >
@@ -29,7 +31,7 @@ export default function BottomTabs() {
                     <Icon
                         name="home-sharp"
                         size={size ? size : 24}
-                        color={focused ? color : "#222222"}
+                        color={focused ? color : theme.colors.normalText}
                         focused={focused}
                         color={color}
                     />
@@ -42,7 +44,7 @@ export default function BottomTabs() {
                     <Icon
                         name="search-sharp"
                         size={size ? size : 24}
-                        color={focused ? color : "#222222"}
+                        color={focused ? color : theme.colors.normalText}
                         focused={focused}
                         color={color}
                     />
@@ -55,7 +57,7 @@ export default function BottomTabs() {
                     <Icon
                         name="pulse-sharp"
                         size={size ? size : 24}
-                        color={focused ? color : "green"}
+                        color={focused ? color : theme.colors.normalText}
                         focused={focused}
                         color={color}
                     />
