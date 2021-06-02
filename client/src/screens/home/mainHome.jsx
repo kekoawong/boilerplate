@@ -30,7 +30,7 @@ export default function MainFeed() {
               onPress={() => console.log('FAB pressed')}
             />
             <FAB
-              title="Scan"
+              title="Attend"
               style={{...styles.fabScan, backgroundColor: theme.colors.primary}}
               icon={
                 <Icon
