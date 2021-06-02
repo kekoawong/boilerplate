@@ -3,8 +3,9 @@ import { Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
 function FAB(props) {
-  const br = props.style.borderRadius ? props.style.borderRadius : 50;
-  const bc = props.style.backgroundColor ? props.style.backgroundColor : '#8947ed';
+
+  const br = props.style.borderRadius || 50;
+  const bc = props.style.backgroundColor || 'green';
 
   return (
     <Button 
