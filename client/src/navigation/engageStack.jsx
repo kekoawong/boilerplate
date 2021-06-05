@@ -7,7 +7,13 @@ export default function EngageStack() {
     const Stack = createStackNavigator();
 
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+        screenOptions={{
+            headerStyle: {
+                shadowColor: 'transparent'
+            } 
+        }}
+    >
             <Stack.Screen name="Engagement" component={MainEngage}
             />
         </Stack.Navigator>
