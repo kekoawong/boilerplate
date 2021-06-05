@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
+export default function MainEngage() {
 
-export default function MainFeed() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <ScrollView style={{ flex: 1 }}>
         <Text>Engagement Screen</Text>
-      </View>
+      </ScrollView>
     );
   }

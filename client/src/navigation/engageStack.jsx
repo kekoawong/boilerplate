@@ -8,7 +8,8 @@ export default function EngageStack() {
 
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Engagement" component={MainEngage} />
+            <Stack.Screen name="Engagement" component={MainEngage}
+            />
         </Stack.Navigator>
     );
 }

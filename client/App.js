@@ -10,9 +10,9 @@ export default function App() {
   const scheme = useColorScheme();
 
   return (
-    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : LightTheme}>
-        <StatusBar />
-        <BottomTab />
-    </NavigationContainer>
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : LightTheme}>
+          <StatusBar />
+          <BottomTab />
+      </NavigationContainer>
   );
 }
