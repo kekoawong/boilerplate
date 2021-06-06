@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, useNavigation } from '@react-navigation/native';
 import FAB from 'src/library/FAB';
 import HomeViz from 'src/dataViz/homeViz';
+import CreateEvent from 'src/event/createEvent';
 
 export default function MainFeed() {
 
     const theme = useTheme();
+    const navigation = useNavigation();
 
     return (
       <View style={styles.mainContainer}>
@@ -27,7 +29,7 @@ export default function MainFeed() {
                   color="white"
                 />
               }
-              onPress={() => console.log('FAB pressed')}
+              onPress={navigation.navigate()}
             />
             <FAB
               title="Attend"
