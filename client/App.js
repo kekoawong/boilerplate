@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 import { LightTheme, DarkTheme } from 'theme';
-import BottomTab from 'src/navigation/bottomTab';
+import ModalStack from 'src/navigation/modalStack';
 import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
   return (
       <NavigationContainer theme={scheme === 'dark' ? DarkTheme : LightTheme}>
           <StatusBar />
-          <BottomTab />
+          <ModalStack />
       </NavigationContainer>
   );
 }

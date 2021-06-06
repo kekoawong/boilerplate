@@ -12,9 +12,8 @@ export default function CreateEvent() {
 
     // renders
     return (
-        <View style={styles.container}>
-            <BottomSheet
-                index={1}
+            <BottomSheet style={styles.container}
+                index={2}
                 snapPoints={snapPoints}
                 onChange={handleSheetChanges}
             >
@@ -22,7 +21,6 @@ export default function CreateEvent() {
                     <Text>Awesome 🎉</Text>
                 </View>
             </BottomSheet>
-        </View>
     );
 };
 
@@ -31,10 +29,18 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 24,
         backgroundColor: 'transparent',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
     },
     contentContainer: {
         flex: 1,
         alignItems: 'center',
-        shadowColor: 'black'
     },
 });
