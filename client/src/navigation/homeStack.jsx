@@ -23,7 +23,8 @@ export default function HomeStack() {
         <Stack.Navigator
             screenOptions={{
                 headerStyle: {
-                    shadowColor: 'transparent'
+                    shadowColor: 'transparent',
+                    elevation: 0,
                 } 
             }}
         >

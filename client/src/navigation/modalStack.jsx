@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import CreateEvent from 'event/createEvent';
 import BottomTab from 'navigation/bottomTab';
+import CreateEvent from 'event/createEvent';
 
 export default function ModalStack() {
 

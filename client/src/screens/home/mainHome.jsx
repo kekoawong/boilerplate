@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme, useNavigation } from '@react-navigation/native';
 import FAB from 'src/library/FAB';
 import HomeViz from 'src/dataViz/homeViz';
-import CreateEvent from 'src/event/createEvent';
 
 export default function MainFeed() {
 
@@ -29,7 +28,10 @@ export default function MainFeed() {
                   color="white"
                 />
               }
-              onPress={console.log('hji')}
+              onPress={() => {
+                navigation.navigate('CreateEvent');
+                console.log('asfs');
+              }}
             />
             <FAB
               title="Attend"
@@ -45,7 +47,6 @@ export default function MainFeed() {
               onPress={() => console.log('FAB pressed')}
             />
         </View>
-        <CreateEvent/>
       </View>
     );
 }

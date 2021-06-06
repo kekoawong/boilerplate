@@ -10,7 +10,8 @@ export default function EngageStack() {
         <Stack.Navigator
         screenOptions={{
             headerStyle: {
-                shadowColor: 'transparent'
+                shadowColor: 'transparent',
+                elevation: 0,
             } 
         }}
     >
