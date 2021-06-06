@@ -1,9 +1,29 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useTheme, useNavigation } from '@react-navigation/native';
 import FAB from 'src/library/FAB';
 import HomeViz from 'src/dataViz/homeViz';
+
+function Testing() {
+  // variables
+  const snapPoints = useMemo(() => [0, '25%', '50%', '100%'], []);
+
+  return (
+      <BottomSheetModalProvider>
+      <View style={styles.container}>
+        <BottomSheetModal
+          index={2}
+          snapPoints={snapPoints}
+        >
+          <View style={styles.contentContainer}>
+            <Text>Awesome stuff 🎉</Text>
+          </View>
+        </BottomSheetModal>
+      </View>
+    </BottomSheetModalProvider>
+  );
+}
 
 export default function MainFeed() {
 

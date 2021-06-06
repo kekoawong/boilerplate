@@ -1,27 +1,25 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import BottomSheet from '@gorhom/bottom-sheet';
+import { Modalize } from 'react-native-modalize';
 
 export default function CreateEvent() {
 
     // variables
-    const snapPoints = useMemo(() => [0, '25%', '50%', '100%'], []);
+    const modulize = useRef(null);
 
     // callbacks
     const handleSheetChanges = () => console.log('handle changes');
 
     // renders
     return (
-        <View>
-            <BottomSheet style={styles.container}
-                index={2}
-                snapPoints={snapPoints}
-                onChange={handleSheetChanges}
+        <View style={{flex: 1}}>
+            <Modalize
+                ref={modulize}
             >
                 <View style={styles.contentContainer}>
                     <Text>Awesome 🎉</Text>
                 </View>
-            </BottomSheet>
+            </Modalize>
         </View>
     );
 };
