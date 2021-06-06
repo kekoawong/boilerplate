@@ -17,11 +17,18 @@ export default function ModalStack() {
             }}
         >
             <Stack.Screen 
-                        name="Main"
-                        component={BottomTab}
-                        options={{ headerShown: false }}
+                name="Main"
+                component={BottomTab}
+                options={{ headerShown: false }}
             />
-            <Stack.Screen name="CreateEvent" component={CreateEvent} />
+            <Stack.Screen 
+                name="CreateEvent" 
+                component={CreateEvent}
+                options={{ 
+                    headerShown: false,
+                    cardStyle: {backgroundColor: 'transparent'}
+                }}
+            />
         </Stack.Navigator>
     );
 }

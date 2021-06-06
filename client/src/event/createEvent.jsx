@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import BottomSheet from '@gorhom/bottom-sheet';
 
@@ -12,6 +12,7 @@ export default function CreateEvent() {
 
     // renders
     return (
+        <View>
             <BottomSheet style={styles.container}
                 index={2}
                 snapPoints={snapPoints}
@@ -21,6 +22,7 @@ export default function CreateEvent() {
                     <Text>Awesome 🎉</Text>
                 </View>
             </BottomSheet>
+        </View>
     );
 };
 
