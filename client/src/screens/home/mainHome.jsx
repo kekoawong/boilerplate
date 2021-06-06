@@ -29,7 +29,7 @@ export default function MainFeed() {
                   color="white"
                 />
               }
-              onPress={navigation.navigate()}
+              onPress={console.log('hji')}
             />
             <FAB
               title="Attend"
@@ -45,6 +45,7 @@ export default function MainFeed() {
               onPress={() => console.log('FAB pressed')}
             />
         </View>
+        <CreateEvent/>
       </View>
     );
 }
