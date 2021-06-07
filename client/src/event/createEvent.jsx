@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, Vibration } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Modalize } from 'react-native-modalize';
 import Toast from 'react-native-toast-message';
@@ -29,6 +29,7 @@ export default function CreateEvent() {
             visibilityTime: 4000,
             topOffset: 50,
         });
+        Vibration.vibrate();
     };
 
     // define components
