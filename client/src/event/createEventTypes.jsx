@@ -21,18 +21,10 @@ function PublicEvent() {
     return (
         <View style={{flex: 1}}>
             <Button title="Show Date Picker" onPress={() => setDatePickerVisibility(true)} />
-            <DateTimePicker
-                testID="dateTimePicker"
-                value={date}
-                mode={'time'}
-                is24Hour={true}
-                display="spinner"
-                onChange={onChange}
-            />
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
                 value={date}
-                mode="time"
+                mode="datetime"
                 onConfirm={() => setDatePickerVisibility(false)}
                 onCancel={() => setDatePickerVisibility(false)}
             />

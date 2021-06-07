@@ -1,20 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Modalize } from 'react-native-modalize';
 import { ButtonGroup } from 'react-native-elements';
 import CreateEventTypes from 'event/createEventTypes';
-
-function ModalEventHeader() {
-
-    return (
-        <View style={{ width: '100%', height: 30}}>
-            <View style={styles.contentContainer}>
-                 <Text>Create Event</Text>
-            </View>
-        </View>
-    );
-}
 
 export default function CreateEvent() {
 
@@ -29,7 +18,17 @@ export default function CreateEvent() {
     useEffect(() => {
         modulize.current?.open();
     });
-    
+
+
+    // define components
+    const ModalEventHeader = () => (
+        <View style={{ width: '100%', height: 40}}>
+            <View style={{flex: 1, flexDirection: 'row-reverse'}}>
+                <Button title='Cancel' onPress={() => modulize.current?.close()}/>
+            </View>
+        </View>
+    );
+
     const component1 = () => <Text>Public</Text>
     const component2 = () => <Text>Private</Text>
     const component3 = () => <Text>For Me</Text>
@@ -45,15 +44,15 @@ export default function CreateEvent() {
                 onClose={() => navigation.goBack()}
                 closeOnOverlayTap={true}
                 withHandle={false}
-                HeaderComponent={ModalEventHeader}
+                HeaderComponent={ModalEventHeader()}
                 withReactModal={true}>
                 <View style={styles.contentContainer}>
+                    <Text>Event Type</Text>
                     <ButtonGroup
                         onPress={setSelectedIndex}
                         selectedIndex={selectedIndex}
                         buttons={buttons}
                         containerStyle={{height: 100}} />
-                    <Text>Awesome 🎉</Text>
                     <CreateEventTypes/>
                 </View>
             </Modalize>

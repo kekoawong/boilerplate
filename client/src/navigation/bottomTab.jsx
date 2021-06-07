@@ -21,7 +21,7 @@ export default function BottomTabs() {
           }}
           appearance={{
               shadow: "true",
-              tabBarBackground: theme.colors.background,
+              tabBarBackground: theme.colors.card,
               dotSize: "small"
           }}
         >
