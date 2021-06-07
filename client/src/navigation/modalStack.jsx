@@ -26,7 +26,7 @@ export default function ModalStack() {
                 component={CreateEvent}
                 options={{ 
                     headerShown: false,
-                    cardStyle: {backgroundColor: 'transparent'}
+                    cardStyle: { backgroundColor: 'transparent' }
                 }}
             />
         </Stack.Navigator>

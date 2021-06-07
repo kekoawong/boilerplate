@@ -29,10 +29,7 @@ export default function MainFeed() {
                   color="white"
                 />
               }
-              onPress={() => {
-                navigation.navigate('CreateEvent');
-                console.log('asfs');
-              }}
+              onPress={() => navigation.navigate('CreateEvent')}
             />
             <FAB
               title="Attend"

@@ -1,14 +1,16 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Modalize } from 'react-native-modalize';
+import { ButtonGroup } from 'react-native-elements';
+import CreateEventTypes from 'event/createEventTypes';
 
-function modalHeader() {
+function ModalEventHeader() {
 
     return (
-        <View style={{flex: 1, width: '100%'}}>
+        <View style={{ width: '100%', height: 30}}>
             <View style={styles.contentContainer}>
-                 <Text>cool cool 🎉</Text>
+                 <Text>Create Event</Text>
             </View>
         </View>
     );
@@ -20,25 +22,39 @@ export default function CreateEvent() {
     const modulize = useRef(null);
     const navigation = useNavigation();
 
+    // set states for header
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
     // open modal
     useEffect(() => {
         modulize.current?.open();
     });
+    
+    const component1 = () => <Text>Public</Text>
+    const component2 = () => <Text>Private</Text>
+    const component3 = () => <Text>For Me</Text>
+        
+    const buttons = [{ element: component1 }, { element: component2 }, { element: component3 }];
 
     return (
         <View style={{flex: 1}}>
             <Modalize
                 modalStyle={styles.container}
                 ref={modulize}
-                modalTopOffset={10}
+                modalTopOffset={0}
                 onClose={() => navigation.goBack()}
                 closeOnOverlayTap={true}
                 withHandle={false}
-                HeaderComponent={modalHeader}
-                withReactModal={true}
-            >
+                HeaderComponent={ModalEventHeader}
+                withReactModal={true}>
                 <View style={styles.contentContainer}>
+                    <ButtonGroup
+                        onPress={setSelectedIndex}
+                        selectedIndex={selectedIndex}
+                        buttons={buttons}
+                        containerStyle={{height: 100}} />
                     <Text>Awesome 🎉</Text>
+                    <CreateEventTypes/>
                 </View>
             </Modalize>
         </View>
