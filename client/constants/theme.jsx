@@ -9,9 +9,12 @@ export const LightTheme = {
         text: 'black',
         normalText: 'black'
     },
-  };
+};
 
-export const DarkTheme = {
+export const DarkTheme = LightTheme;
+
+// for testing purposes and lack of stylistic choices, keeping this like this for now
+const RealDarkTheme = {
   dark: true,
   colors: {
       ...DefaultTheme.colors,

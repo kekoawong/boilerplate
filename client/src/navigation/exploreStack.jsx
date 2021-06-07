@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { createStackNavigator, useHeaderHeight } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { HeaderButtons, HeaderButton, Item } from 'react-navigation-header-buttons';
-import { BlurView } from 'expo-blur';
 import MainExplore from 'screens/explore/mainExplore';
 
 
@@ -16,6 +15,7 @@ export default function ExploreStack() {
         <HeaderButton IconComponent={Icon} iconSize={23} {...props} />
     );
     const Stack = createStackNavigator();
+    const navigation = useNavigation();
 
     return (
         <Stack.Navigator
@@ -32,7 +32,7 @@ export default function ExploreStack() {
                     headerRight: () => (
                         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
                             <Item title="Scan" iconName="qrcode-scan" onPress={() => alert('message')} />
-                            <Item title="Create Event" iconName="calendar-plus" onPress={() => alert('message')} />
+                            <Item title="Create Event" iconName="calendar-plus" onPress={() => navigation.navigate('CreateEvent')} />
                         </HeaderButtons>
                     ),
                     headerLeft: () => (

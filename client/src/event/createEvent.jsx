@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Modalize } from 'react-native-modalize';
+import Toast from 'react-native-toast-message';
 import { ButtonGroup } from 'react-native-elements';
 import CreateEventTypes from 'event/createEventTypes';
 
@@ -18,7 +19,17 @@ export default function CreateEvent() {
     useEffect(() => {
         modulize.current?.open();
     });
-
+    
+    // create event function
+    const createdEvent = () => {
+        modulize.current?.close();
+        Toast.show({
+            text1: 'Hello',
+            text2: 'This is some something 👋',
+            visibilityTime: 4000,
+            topOffset: 50,
+        });
+    };
 
     // define components
     const ModalEventHeader = () => (
@@ -28,7 +39,6 @@ export default function CreateEvent() {
             </View>
         </View>
     );
-
     const component1 = () => <Text>Public</Text>
     const component2 = () => <Text>Private</Text>
     const component3 = () => <Text>For Me</Text>
@@ -54,6 +64,7 @@ export default function CreateEvent() {
                         buttons={buttons}
                         containerStyle={{height: 100}} />
                     <CreateEventTypes/>
+                    <Button title='Create' onPress={createdEvent}/>
                 </View>
             </Modalize>
         </View>
