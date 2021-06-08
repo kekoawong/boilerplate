@@ -29,6 +29,11 @@ export default function ModalStack() {
                     cardStyle: { backgroundColor: 'transparent' }
                 }}
             />
+            <Stack.Screen 
+                name="Scan"
+                component={BottomTab}
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
     );
 }
