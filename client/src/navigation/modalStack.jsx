@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { HeaderButtons, HeaderButton, Item } from 'react-navigation-header-buttons';
@@ -7,13 +8,6 @@ import CreateEvent from 'event/createEvent';
 import ScannerScreen from 'library/scannerScreen';
 
 export default function ModalStack() {
-
-    // for header button
-    const MaterialHeaderButton = (props) => (
-        // the `props` here come from <Item ... />
-        // you may access them and pass something else to `HeaderButton` if you like
-        <HeaderButton IconComponent={Icon} iconSize={23} {...props} />
-    );
 
     const Stack = createStackNavigator();
 
@@ -47,8 +41,8 @@ export default function ModalStack() {
                     title: 'Scan Event Code',
                     headerLeft: null,
                     headerRight: () => (
-                        <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
-                            <Item title="Cancel" iconName="close-octagon" onPress={() => navigation.goBack()} />
+                        <HeaderButtons HeaderButtonComponent={Button}>
+                            <Item title='Cancel' onPress={() => navigation.goBack()}/>
                         </HeaderButtons>
                     ),
                 })}
