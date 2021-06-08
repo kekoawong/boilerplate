@@ -42,7 +42,7 @@ export default function MainFeed() {
                   color="white"
                 />
               }
-              onPress={() => console.log('FAB pressed')}
+              onPress={() => navigation.navigate('Scan')}
             />
         </View>
       </View>
