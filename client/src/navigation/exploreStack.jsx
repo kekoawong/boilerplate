@@ -1,6 +1,5 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { HeaderButtons, HeaderButton, Item } from 'react-navigation-header-buttons';
 import MainExplore from 'screens/explore/mainExplore';
@@ -15,7 +14,6 @@ export default function ExploreStack() {
         <HeaderButton IconComponent={Icon} iconSize={23} {...props} />
     );
     const Stack = createStackNavigator();
-    const navigation = useNavigation();
 
     return (
         <Stack.Navigator
@@ -28,10 +26,10 @@ export default function ExploreStack() {
         >
             <Stack.Screen name="Explore" 
                 component={MainExplore} 
-                options={{
+                options={({ navigation }) => ({
                     headerRight: () => (
                         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
-                            <Item title="Scan" iconName="qrcode-scan" onPress={() => alert('message')} />
+                            <Item title="Scan" iconName="qrcode-scan" onPress={() => navigation.navigate('Scan')} />
                             <Item title="Create Event" iconName="calendar-plus" onPress={() => navigation.navigate('CreateEvent')} />
                         </HeaderButtons>
                     ),
@@ -40,7 +38,7 @@ export default function ExploreStack() {
                             <Item title="search" iconName="account" onPress={() => alert('account')} />
                         </HeaderButtons>
                     )
-                }}
+                })}
             />
         </Stack.Navigator>
     );

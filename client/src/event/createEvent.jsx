@@ -55,8 +55,9 @@ export default function CreateEvent() {
                 onClose={() => navigation.goBack()}
                 closeOnOverlayTap={true}
                 withHandle={false}
-                HeaderComponent={ModalEventHeader()}
-                withReactModal={true}>
+                HeaderComponent={ModalEventHeader}
+                withReactModal={true}
+                >
                 <View style={styles.contentContainer}>
                     <Text>Event Type</Text>
                     <ButtonGroup
