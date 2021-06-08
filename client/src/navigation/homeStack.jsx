@@ -30,7 +30,7 @@ export default function HomeStack() {
         >
             <Stack.Screen name="Home" 
                 component={MainHome} 
-                options={{
+                options={({ navigation }) => ({
                     headerRight: () => (
                         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
                             <Item title="Message" iconName="chat-processing" onPress={() => alert('message')} />
@@ -38,10 +38,10 @@ export default function HomeStack() {
                     ),
                     headerLeft: () => (
                         <HeaderButtons HeaderButtonComponent={MaterialHeaderButton}>
-                            <Item title="search" iconName="account" onPress={() => alert('account')} />
+                            <Item title="profile" iconName="account" onPress={() => navigation.navigate('Profile')} />
                         </HeaderButtons>
                     )
-                  }}
+                  })}
             />
         </Stack.Navigator>
     );
