@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { SearchBar } from 'react-native-elements';
-import { useHeaderHeight } from '@react-navigation/stack';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import { SearchBar, Card, Button, Icon } from 'react-native-elements';
 
 function HeaderSearchBar(props) {
 
@@ -9,24 +8,25 @@ function HeaderSearchBar(props) {
   const [searchText, setSearchText] = useState('');
 
   return (
-    <SearchBar
-      placeholder="Type Here..."
-      containerStyle={styles.searchContainer}
-      inputContainerStyle={{margin: 50, height: 30}}
-      onChangeText={setSearchText}
-      value={searchText}
-      platform={'ios'}
-    />
+      <SearchBar
+        placeholder="Type Here..."
+        containerStyle={styles.searchContainer}
+        inputContainerStyle={{margin: 50, height: 30}}
+        onChangeText={setSearchText}
+        value={searchText}
+        platform={'ios'}
+      />
   );
 }
 
-export default function MainFeed() {
+export default function MainExplore() {
 
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}
+    >
       <HeaderSearchBar/>
       <Text>Explore Screen</Text>
-    </View>
+    </ScrollView>
   );
 }
 
