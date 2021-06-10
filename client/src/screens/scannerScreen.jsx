@@ -39,18 +39,20 @@ export default function ScannerScreen() {
   }
 
   return (
-    <ActionModal
-      ref={modulize}
-      onClose={() => navigation.goBack()}
-      >
-      <View style={styles.container}>
-        <BarCodeScanner
-          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-          style={StyleSheet.absoluteFillObject}
-        />
-        {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-      </View>
-    </ActionModal>
+    <View style={{flex: 1}}>
+      <ActionModal
+        ref={modulize}
+        onClose={() => navigation.goBack()}
+        >
+        <View style={styles.container}>
+          <BarCodeScanner
+            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+            style={StyleSheet.absoluteFillObject}
+          />
+          {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+        </View>
+      </ActionModal>
+    </View>
   );
 }
 
