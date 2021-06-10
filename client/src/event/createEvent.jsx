@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Button, StyleSheet, Vibration } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Modalize } from 'react-native-modalize';
 import Toast from 'react-native-toast-message';
 import { ButtonGroup } from 'react-native-elements';
 import CreateEventTypes from 'event/createEventTypes';
@@ -12,8 +11,6 @@ export default function CreateEvent() {
     // variables
     const modulize = useRef();
     const navigation = useNavigation();
-
-    console.log(modulize);
 
     // set states for header
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -35,14 +32,6 @@ export default function CreateEvent() {
         Vibration.vibrate();
     };
 
-    // define components
-    const ModalEventHeader = () => (
-        <View style={{ width: '100%', height: 40}}>
-            <View style={{flex: 1, flexDirection: 'row-reverse'}}>
-                <Button title='Cancel' onPress={() => modulize.current?.close()}/>
-            </View>
-        </View>
-    );
     const component1 = () => <Text>Public</Text>
     const component2 = () => <Text>Private</Text>
     const component3 = () => <Text>For Me</Text>

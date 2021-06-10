@@ -8,6 +8,7 @@ import CreateEvent from 'event/createEvent';
 import ProfileScreen from 'screens/profile/profileScreen';
 import ScannerScreen from 'screens/scannerScreen';
 
+
 export default function ModalStack() {
 
     // for header button
@@ -59,15 +60,19 @@ export default function ModalStack() {
                 name="Scan"
                 component={ScannerScreen}
                 navigationOptions
-                options={({ navigation }) => ({
-                    title: 'Scan Event Code',
-                    headerLeft: null,
-                    headerRight: () => (
-                        <HeaderButtons HeaderButtonComponent={Button}>
-                            <Item title='Cancel' onPress={() => navigation.goBack()}/>
-                        </HeaderButtons>
-                    ),
-                })}
+                options={{ 
+                    headerShown: false,
+                    cardStyle: { backgroundColor: 'transparent' }
+                }}
+                // options={({ navigation }) => ({
+                //     title: 'Scan Event Code',
+                //     headerLeft: null,
+                //     headerRight: () => (
+                //         <HeaderButtons HeaderButtonComponent={Button}>
+                //             <Item title='Cancel' onPress={() => navigation.goBack()}/>
+                //         </HeaderButtons>
+                //     ),
+                // })}
             />
         </Stack.Navigator>
     );
