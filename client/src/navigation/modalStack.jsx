@@ -6,7 +6,7 @@ import { HeaderButtons, HeaderButton, Item } from 'react-navigation-header-butto
 import BottomTab from 'navigation/bottomTab';
 import CreateEvent from 'event/createEvent';
 import ProfileScreen from 'screens/profile/profileScreen';
-import ScannerScreen from 'library/scannerScreen';
+import ScannerScreen from 'screens/scannerScreen';
 
 export default function ModalStack() {
 

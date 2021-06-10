@@ -12,6 +12,8 @@ export default function CreateEvent() {
     const modulize = useRef(null);
     const navigation = useNavigation();
 
+    console.log(modulize);
+
     // set states for header
     const [selectedIndex, setSelectedIndex] = useState(0);
 
