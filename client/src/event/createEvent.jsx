@@ -5,11 +5,12 @@ import { Modalize } from 'react-native-modalize';
 import Toast from 'react-native-toast-message';
 import { ButtonGroup } from 'react-native-elements';
 import CreateEventTypes from 'event/createEventTypes';
+import ActionModal from 'library/actionModal';
 
 export default function CreateEvent() {
 
     // variables
-    const modulize = useRef(null);
+    const modulize = useRef();
     const navigation = useNavigation();
 
     console.log(modulize);
@@ -50,15 +51,9 @@ export default function CreateEvent() {
 
     return (
         <View style={{flex: 1}}>
-            <Modalize
-                modalStyle={styles.container}
+            <ActionModal
                 ref={modulize}
-                modalTopOffset={0}
                 onClose={() => navigation.goBack()}
-                closeOnOverlayTap={true}
-                withHandle={false}
-                HeaderComponent={ModalEventHeader}
-                withReactModal={true}
                 >
                 <View style={styles.contentContainer}>
                     <Text>Event Type</Text>
@@ -70,7 +65,7 @@ export default function CreateEvent() {
                     <CreateEventTypes/>
                     <Button title='Create' onPress={createdEvent}/>
                 </View>
-            </Modalize>
+            </ActionModal>
         </View>
     );
 };
